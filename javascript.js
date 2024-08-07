@@ -64,13 +64,18 @@ function playRound(humanChoice, computerChoice) {
     console.log(`YOU: ${humanScore} COMPUTER: ${computerScore}`);
 }
 
+function declaresWinner() {
+    if(humanScore > computerScore) console.log("YOU WON!!")
+    else if (humanScore < computerScore) console.log("YOU LOSE!!");
+    else console.log("TIE!!")
+
+}
+
 function playGame() {
     for(let i = 0; i < 5; i++) {
         playRound(getHumanChoice(), getComputerChoice());
     }
-    if(humanScore > computerScore) console.log("YOU WON!!")
-    else if (humanScore < computerScore) console.log("YOU LOSE!!");
-    else console.log("TIE!!")
+    declaresWinner();
 }
 
 playGame();
